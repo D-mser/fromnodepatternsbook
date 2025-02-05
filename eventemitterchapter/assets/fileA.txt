@@ -1,0 +1,5 @@
+    Wages: If your salary increases by 3% but inflation is 5%, your real wages have actually decreased.
+
+    Savings: If you have $1,000 in a savings account earning 2% interest but inflation is 3%, the real value of your savings is shrinking.
+
+    Investments: The real return on an investment is the nominal return minus inflation. For example, if your investment grows by 7% but inflation is 2%, your real return is 5%.
