@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events'
 
-function ticker (number, callback) {
-  const eventEmitter = new EventEmitter()
+export function ticker (number, callback) {
+  const emitter = new EventEmitter()
   const delay = 50
   let startTime = Date.now()
   let counter = 0
@@ -9,26 +9,18 @@ function ticker (number, callback) {
   function recursiveSetTimeout () {
     const elapsedTime = Date.now() - startTime
 
-    if (elapsedTime < number) {
-      console.log(elapsedTime)
-      eventEmitter.emit('tick')
-      counter++
-
-      setTimeout(recursiveSetTimeout, delay)
-    } else {
-      callback(counter)
+    if (elapsedTime >= number) {
+      return callback(null, counter)
     }
+
+    setTimeout(() => {
+      emitter.emit('tick')
+      ++counter
+      return recursiveSetTimeout()
+    }, delay)
   }
 
   recursiveSetTimeout()
 
-  return eventEmitter
+  return emitter
 }
-
-const tickerInstance = ticker(200, (totalTicks) => {
-  console.log(`Total ticks emitted: ${totalTicks}`)
-})
-
-tickerInstance.on('tick', () => {
-  console.log('Tick!')
-})

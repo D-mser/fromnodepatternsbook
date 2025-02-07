@@ -5,7 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "mocha": "^11.1.0",
+    "chai": "^5.1.2",
+    "sinon": "^19.0.2"
+  }
 }
