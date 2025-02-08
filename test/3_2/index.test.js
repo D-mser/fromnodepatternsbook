@@ -1,4 +1,4 @@
-import { ticker } from '../eventemitterchapter/ticker.js'
+import { ticker } from '../../eventemitterchapter/3_2/index.js'
 
 import { expect } from 'chai'
 import sinon from 'sinon'

@@ -1,11 +1,11 @@
 {
   "name": "nodepatternsbook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/**/*.test.js"
   },
   "private": true,
   "devDependencies": {
