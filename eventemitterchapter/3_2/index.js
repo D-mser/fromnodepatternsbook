@@ -1,26 +1,17 @@
 import { EventEmitter } from 'events'
 
+import { recursiveSetTimeout } from '../helpers/recursiveSetTimeout.js'
+
+/**
+ * @description A function that emits tick events every 50ms and stops after the given timer of ticks is reached.
+ * @param {Number} number
+ * @param {CallableFunction} callback
+ * @returns {EventEmitter}
+ */
 export function ticker (number, callback) {
   const emitter = new EventEmitter()
-  const delay = 50
-  let startTime = Date.now()
-  let counter = 0
 
-  function recursiveSetTimeout () {
-    const elapsedTime = Date.now() - startTime
-
-    if (elapsedTime >= number) {
-      return callback(null, counter)
-    }
-
-    setTimeout(() => {
-      emitter.emit('tick')
-      ++counter
-      return recursiveSetTimeout()
-    }, delay)
-  }
-
-  recursiveSetTimeout()
+  recursiveSetTimeout(Date.now(), number, callback, emitter, 0)
 
   return emitter
 }

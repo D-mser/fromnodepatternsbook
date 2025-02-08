@@ -16,10 +16,10 @@ describe('ticker', () => {
 
   it('should emit tick events at approximately 50ms intervals', () => {
     const mockCallback = sinon.spy()
-    const eventEmitter = ticker(200, mockCallback)
+    const emitter = ticker(200, mockCallback)
 
     const tickListener = sinon.spy()
-    eventEmitter.on('tick', tickListener)
+    emitter.on('tick', tickListener)
 
     clock.runAll()
 
