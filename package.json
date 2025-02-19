@@ -11,6 +11,10 @@
   "devDependencies": {
     "mocha": "^11.1.0",
     "chai": "^5.1.2",
-    "sinon": "^19.0.2"
+    "sinon": "^19.0.2",
+    "mock-fs": "^5.5.0"
+  },
+  "dependencies": {
+    "async-es": "^3.2.6"
   }
 }
