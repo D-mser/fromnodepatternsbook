@@ -2,7 +2,7 @@ import mock from 'mock-fs'
 import { expect } from 'chai'
 import { readFileSync } from 'node:fs'
 
-import { concatFiles } from '../../eventemitterchapter/4_1/index.js'
+import { concatFiles } from '../../../04-asynchronous-control-flow-patterns-with-callbacks/4_1/index.js'
 
 describe('concat files sequentially', function () {
   beforeEach(function () {
@@ -22,7 +22,6 @@ describe('concat files sequentially', function () {
     concatFiles('dest.txt', function (err) {
       if (err) return done(err)
       const result = readFileSync('dest.txt', 'utf8')
-      console.log(result)
       expect(result).to.equal(expectedDestContent)
       done()
     }, 'fileA.txt', 'fileB.txt', 'fileC.txt')

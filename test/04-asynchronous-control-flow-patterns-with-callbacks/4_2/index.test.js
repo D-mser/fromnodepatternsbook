@@ -1,7 +1,7 @@
 import mock from 'mock-fs'
 import { expect } from 'chai'
 
-import { listNestedFiles } from '../../eventemitterchapter/4_2/index.js'
+import { listNestedFiles } from '../../../04-asynchronous-control-flow-patterns-with-callbacks/4_2/index.js'
 
 describe('list files recursively', function () {
   beforeEach(function () {

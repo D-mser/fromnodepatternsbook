@@ -1,4 +1,4 @@
-import { tickerModifiedWithError } from '../../eventemitterchapter/3_4/index.js'
+import { tickerModifiedWithError } from '../../../03-callbacks-and-events/3_4/index.js'
 
 import { expect } from 'chai'
 import sinon from 'sinon'
